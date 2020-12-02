@@ -6,7 +6,7 @@ class QuotesData extends Component {
     quote: "",
   };
   async getQuotes() {
-    let response = await axios.get("http://localhost:3000/api/random");
+    let response = await axios.get("http://localhost:3000/api/quotes/random");
     this.setState({ quote: response.data });
   }
 

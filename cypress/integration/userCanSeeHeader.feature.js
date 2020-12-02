@@ -3,7 +3,7 @@ describe("user can display one quote", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/random",
+      url: "http://localhost:3000/api/quotes/random",
       response: "fixture:display_one_quote.json",
     });
     cy.visit("/");
