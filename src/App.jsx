@@ -4,7 +4,7 @@ import QuotesData from "./components/QuotesData";
 const App = () => {
   return (
     <div>
-      <h1>Trumpster</h1>
+      <h1>Trumpsterrrrrrr</h1>
       <QuotesData />
     </div>
   );
