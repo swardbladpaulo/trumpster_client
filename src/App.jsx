@@ -7,9 +7,12 @@ const App = () => {
     <div>
       <h1>Trumpster</h1>
       <QuotesData />
+      
       <RegisterForm />
     </div>
   );
 };
 
 export default App;
+
+
