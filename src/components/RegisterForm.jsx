@@ -13,18 +13,15 @@ class RegisterForm extends Component {
       password: event.target.password.value,
       password_confirmation: event.target.password_confirmation.value,
     };
-    let response = await axios.post(
-      "http://localhost:3000/api/auth",
-      credentials
-    );
+    let response = await axios.post("/auth", credentials);
     let userData = {
       uid: response.headers.uid,
       client: response.headers.client,
       token_type: response.headers.token_type,
       expiry: response.headers.expiry,
     };
-    localStorage.setItem("credentials", JSON.stringify(userData))
-    localStorage.setItem("authenticated", true)
+    localStorage.setItem("credentials", JSON.stringify(userData));
+    localStorage.setItem("authenticated", true);
     this.setState({ showRegistrationButton: false });
   }
 
