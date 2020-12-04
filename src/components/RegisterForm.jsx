@@ -46,10 +46,10 @@ class RegisterForm extends Component {
               placeholder="Password"
             />
             <input
-              type="password_confirmation"
+              type="password"
               name="password_confirmation"
               data-cy="password_confirmation"
-              placeholder="password_confirmation"
+              placeholder="Password Confirmation"
             />
             <button type="submit" value="Register" data-cy="submit-btn">
               Submit

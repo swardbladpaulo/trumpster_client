@@ -29,7 +29,7 @@ describe("user can register", () => {
       cy.get("[data-cy='password_confirmation']").type("password");
       cy.get("button").contains("Submit").click();
     });
-    cy.get("#message").should("contain", "success");
+    cy.get("[data-cy='confirmation-message']").contains("TREMENDOUS, you are now a registered Trumpster!");
   });
 
   it("sad path: unsuccessful register", () => {
