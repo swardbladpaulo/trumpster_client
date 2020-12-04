@@ -1,6 +1,6 @@
 import React from "react";
 import QuotesData from "./components/QuotesData";
-import RegisterForm from "./components/register"
+import RegisterForm from "./components/RegisterForm"
 
 const App = () => {
   return (

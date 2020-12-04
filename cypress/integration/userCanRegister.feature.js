@@ -1,10 +1,11 @@
 describe("user can register", () => {
   beforeEach(() => {
     cy.server();
-    cy.visit("/");
-  });
-
-  it("successful", () => {
+    cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/quotes/random",
+      response: "fixture:display_one_quote.json",
+    });
     cy.route({
       method: "POST",
       url: "http://localhost:3000/api/auth",
@@ -14,11 +15,14 @@ describe("user can register", () => {
         access_token: "blabla",
         client: "1337",
         token_type: "Bearer",
-        expiry: 169999
+        expiry: 169999,
       },
     });
+    cy.visit("/");
+  });
 
-    cy.get("[data-cy='register-btn']").click()
+  it("successful", () => {
+    cy.get("[data-cy='register-btn']").click();
     cy.get("[data-cy='register-form']").within(() => {
       cy.get("[data-cy='email']").type("user@gmail.com");
       cy.get("[data-cy='password']").type("password");
@@ -38,7 +42,7 @@ describe("user can register", () => {
       },
     });
 
-    cy.get("[data-cy='register-btn']").click()
+    cy.get("[data-cy='register-btn']").click();
     cy.get("[data-cy='register-form']").within(() => {
       cy.get("[data-cy='email']").type("user@gmail.com");
       cy.get("[data-cy='password']").type("password");

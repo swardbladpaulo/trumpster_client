@@ -25,7 +25,6 @@ class RegisterForm extends Component {
     };
     localStorage.setItem("credentials", JSON.stringify(userData))
     localStorage.setItem("authenticated", true)
-    debugger
     this.setState({ showRegistrationButton: false });
   }
 
@@ -73,8 +72,3 @@ class RegisterForm extends Component {
 }
 
 export default RegisterForm;
-
-
-// for search function to validate authenticated users
-// { localStorage.getItem('authenticated') === 'true' && 
-// <button> search for a tag here <button>}
