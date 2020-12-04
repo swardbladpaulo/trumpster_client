@@ -4,6 +4,7 @@ import axios from "axios";
 class RegisterForm extends Component {
   state = {
     showRegistrationButton: false,
+    message: "",
   };
 
   async authenticate(event) {
@@ -13,16 +14,24 @@ class RegisterForm extends Component {
       password: event.target.password.value,
       password_confirmation: event.target.password_confirmation.value,
     };
-    let response = await axios.post("/auth", credentials);
-    let userData = {
-      uid: response.headers.uid,
-      client: response.headers.client,
-      token_type: response.headers.token_type,
-      expiry: response.headers.expiry,
-    };
-    localStorage.setItem("credentials", JSON.stringify(userData));
-    localStorage.setItem("authenticated", true);
-    this.setState({ showRegistrationButton: false });
+    try {
+      let response = await axios.post("/auth", credentials);
+      let userData = {
+        uid: response.headers.uid,
+        client: response.headers.client,
+        token_type: response.headers.token_type,
+        expiry: response.headers.expiry,
+      };
+      localStorage.setItem("credentials", JSON.stringify(userData));
+      localStorage.setItem("authenticated", true);
+      this.setState({
+        showRegistrationButton: false,
+        message: "TREMENDOUS, you are now a registered Trumpster!",
+      });
+    } catch (error) {
+      localStorage.setItem("authenticated", false);
+      this.setState({ message: "Your credentials are RIGGED!!" });
+    }
   }
 
   render() {
@@ -62,6 +71,9 @@ class RegisterForm extends Component {
           >
             Create an account!
           </button>
+        )}
+        {this.state.message && (
+          <div data-cy="confirmation-message">{this.state.message}</div>
         )}
       </>
     );
