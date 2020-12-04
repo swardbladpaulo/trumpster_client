@@ -46,9 +46,9 @@ describe("user can register", () => {
     cy.get("[data-cy='register-form']").within(() => {
       cy.get("[data-cy='email']").type("user@gmail.com");
       cy.get("[data-cy='password']").type("password");
-      cy.get("[data-cy='password_confirmation']").type("wrong password");
+      cy.get("[data-cy='password_confirmation']").type("wrongpassword");
       cy.get("button").contains("Submit").click();
     });
-    cy.get("#message").should("contain", "error");
+    cy.get("[data-cy='confirmation-message']").contains("Whoops!");
   });
 });

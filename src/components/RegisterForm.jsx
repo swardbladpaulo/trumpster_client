@@ -27,7 +27,7 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <div>
+      <>
         {this.state.showRegistrationButton ? (
           <form
             data-cy="register-form"
@@ -63,7 +63,7 @@ class RegisterForm extends Component {
             Create an account!
           </button>
         )}
-      </div>
+      </>
     );
   }
 }
