@@ -5,7 +5,7 @@ class LoginForm extends Component {
 	state = {
 		showLoginButton: false,
 		message: "",
-		showLogoutButton: true
+		showLogoutButton: true,
 	};
 
 	async authenticate(event) {
@@ -35,40 +35,40 @@ class LoginForm extends Component {
 	}
 	render() {
 		return (
-					<>
-						{this.state.showLoginButton ? (
-							<form
-								data-cy="login-form"
-								onSubmit={(event) => this.authenticate(event)}
-							>
-								<input
-									type="email"
-									name="email"
-									data-cy="email"
-									placeholder="Email"
-								/>
-								<input
-									type="password"
-									name="password"
-									data-cy="password"
-									placeholder="Password"
-								/>
-								<button type="submit" value="Register" data-cy="submit-btn">
-									Submit
-							</button>
-							</form>
-						) : (
-								<button
-									data-cy="login-btn"
-									onClick={() => this.setState({ showLoginButton: true })}
-								>
-									Login
-								</button>
-							)}
-						{this.state.message && (
-							<div data-cy="error-message">{this.state.message}</div>
-						)}
-					</>
+			<>
+				{this.state.showLoginButton ? (
+					<form
+						data-cy="login-form"
+						onSubmit={(event) => this.authenticate(event)}
+					>
+						<input
+							type="email"
+							name="email"
+							data-cy="email"
+							placeholder="Email"
+						/>
+						<input
+							type="password"
+							name="password"
+							data-cy="password"
+							placeholder="Password"
+						/>
+						<button type="submit" value="Register" data-cy="submit-btn">
+							Submit
+						</button>
+					</form>
+				) : (
+					<button
+						data-cy="login-btn"
+						onClick={() => this.setState({ showLoginButton: true })}
+					>
+						Login
+					</button>
+				)}
+				{this.state.message && (
+					<div data-cy="error-message">{this.state.message}</div>
+				)}
+			</>
 		);
 	}
 }
