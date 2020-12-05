@@ -7,15 +7,18 @@ class SearchQuotes extends Component {
     specificQuotes: [],
   };
 
+  componentDidMount() {
+    this.searchQuote()
+  }
+
   setInputValue(event) {
     this.setState({ searchValue: event.target.value });
   }
 
-  async searchQuote(event) {
-    event.preventDefault();
+  async searchQuote() {
     let headers = JSON.parse(localStorage.getItem("credentials"))
-    debugger
     const q = this.state.searchValue;
+    debugger
     let response = await axios.get('/quotes', {headers: headers, params: {query: q}});
     this.setState({ specificQuotes: response.data.quotes });
   }
