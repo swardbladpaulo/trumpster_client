@@ -8,7 +8,7 @@ describe("User can login", () => {
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/auth",
+      url: "http://localhost:3000/api/auth/sign_in",
       response: "fixture:user_can_login.json",
       headers: {
         uid: "user@gmail.com",
@@ -36,7 +36,7 @@ describe("User can login", () => {
   it("sad path: unsuccessfully", () => {
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/auth",
+      url: "http://localhost:3000/api/auth/sign_in",
       status: "401",
       response: {
         errors: ["Your login credentials are RIGGED"],

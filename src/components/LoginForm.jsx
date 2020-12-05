@@ -5,7 +5,6 @@ class LoginForm extends Component {
   state = {
     showLoginButton: false,
     message: "",
-    showLogoutButton: true,
   };
 
   async authenticate(event) {
@@ -15,7 +14,7 @@ class LoginForm extends Component {
       password: event.target.password.value,
     };
     try {
-      let response = await axios.post("/auth", credentials);
+      let response = await axios.post("/auth/sign_in", credentials);
       let userData = {
         uid: response.headers.uid,
         client: response.headers.client,
