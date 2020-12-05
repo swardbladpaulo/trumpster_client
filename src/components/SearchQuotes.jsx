@@ -16,7 +16,7 @@ class SearchQuotes extends Component {
     let headers = JSON.parse(localStorage.getItem("credentials"))
     debugger
     const q = this.state.searchValue;
-    let response = await axios.get('/quotes', {params: {query: q}}, {headers: headers});
+    let response = await axios.get('/quotes', {headers: headers, params: {query: q}});
     this.setState({ specificQuotes: response.data.quotes });
   }
   render() {
