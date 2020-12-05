@@ -20,7 +20,8 @@ describe("User can become a subscriber", () => {
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/subscriptions",
+			url: "http://localhost:3000/api/subscriptions",
+			response: "fixture:payment_response.json"
     });
 		cy.visit("/");
 		cy.get("[data-cy='login-btn']").click();
@@ -63,7 +64,7 @@ describe("User can become a subscriber", () => {
 			cy.get("button").contains("Confirm Payment").click();
 		});
 		cy.get('[data-cy="payment-message"]').contains(
-			"Congratulations, you are now a Trumpscriber!"
+			"HUUUUUGGGEEEE Thanks for your money, now you are a REAL Trumpscriber!!"
 		);
 	});
 });
