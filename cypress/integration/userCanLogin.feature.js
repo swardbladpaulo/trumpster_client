@@ -26,9 +26,11 @@ describe("User can login", () => {
 		cy.get("[data-cy='login-form']").within(() => {
 			cy.get("[data-cy='email']").type("user@gmail.com");
 			cy.get("[data-cy='password']").type("password");
-			cy.get("button").contains("Submit").click();
+			cy.get("[data-cy='submit-btn']").contains("Submit").click();
 		});
-		cy.get("[data-cy='logout-btn']").should("be.visible");
+		cy.get("[data-cy='error-message']").contains(
+			"You have successfully logged in!"
+		);
 	});
 
 	it("sad path: unsuccessfully", () => {

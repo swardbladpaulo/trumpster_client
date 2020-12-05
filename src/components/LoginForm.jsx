@@ -4,8 +4,8 @@ import axios from "axios";
 class LoginForm extends Component {
 	state = {
 		showLoginButton: false,
-    message: "",
-    showLogoutButton: true
+		message: "",
+		showLogoutButton: true
 	};
 
 	async authenticate(event) {
@@ -26,7 +26,7 @@ class LoginForm extends Component {
 			localStorage.setItem("authenticated", true);
 			this.setState({
 				showLoginButton: false,
-				message: "TREMENDOUS, you are now a registered Trumpster!",
+				message: "You have successfully logged in!",
 			});
 		} catch (error) {
 			localStorage.setItem("authenticated", false);
@@ -35,51 +35,40 @@ class LoginForm extends Component {
 	}
 	render() {
 		return (
-			<>
-      {this.state.showLogoutButton ? (
-				<>
-					{this.state.showLoginButton ? (
-						<form
-							data-cy="login-form"
-							onSubmit={(event) => this.authenticate(event)}
-						>
-							<input
-								type="email"
-								name="email"
-								data-cy="email"
-								placeholder="Email"
-							/>
-							<input
-								type="password"
-								name="password"
-								data-cy="password"
-								placeholder="Password"
-							/>
-							<button type="submit" value="Register" data-cy="login-btn">
-								Submit
+					<>
+						{this.state.showLoginButton ? (
+							<form
+								data-cy="login-form"
+								onSubmit={(event) => this.authenticate(event)}
+							>
+								<input
+									type="email"
+									name="email"
+									data-cy="email"
+									placeholder="Email"
+								/>
+								<input
+									type="password"
+									name="password"
+									data-cy="password"
+									placeholder="Password"
+								/>
+								<button type="submit" value="Register" data-cy="submit-btn">
+									Submit
 							</button>
-						</form>
-					) : (
-						<button
-							data-cy="login-btn"
-							onClick={() => this.setState({ showLoginButton: true })}
-						>
-							Login
-						</button>
-					)}
-					{this.state.message && (
-						<div data-cy="error-message">{this.state.message}</div>
-					)}
-				</>
-        ) : (
-          <button
-							data-cy="logout-btn"
-							onClick={() => this.setState({ showLogoutButton: true })}
-						>
-							Logout
-						</button>
-        )}
-			</>
+							</form>
+						) : (
+								<button
+									data-cy="login-btn"
+									onClick={() => this.setState({ showLoginButton: true })}
+								>
+									Login
+								</button>
+							)}
+						{this.state.message && (
+							<div data-cy="error-message">{this.state.message}</div>
+						)}
+					</>
 		);
 	}
 }
