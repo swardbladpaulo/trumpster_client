@@ -57,13 +57,13 @@ class LoginForm extends Component {
             </button>
           </form>
         ) : (
-          <button
-            data-cy="login-btn"
-            onClick={() => this.setState({ showLoginButton: true })}
-          >
-            Login
-          </button>
-        )}
+            <button
+              data-cy="login-btn"
+              onClick={() => this.setState({ showLoginButton: true })}
+            >
+              Login
+            </button>
+          )}
         {this.state.message && (
           <div data-cy="error-message">{this.state.message}</div>
         )}

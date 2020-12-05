@@ -33,8 +33,8 @@ class SubscriptionPayment extends Component {
 				{this.state.message ? (
 					<p data-cy="payment-message">{this.state.message}</p>
 				) : (
-					<>
-						{this.state.showPayment ? (
+						<>
+							{this.state.showPayment ? (
 								<form data-cy="payment-form" onSubmit={this.payWithStripe}>
 									<div data-cy="card-number">
 										<label>Card Number</label>
@@ -57,8 +57,8 @@ class SubscriptionPayment extends Component {
 									>
 										Become a Trumpscriber!
 									</button>
-								)	
-						}
+								)
+							}
 						</>
 					)}
 			</div>

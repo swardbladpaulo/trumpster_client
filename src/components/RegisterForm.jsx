@@ -69,13 +69,13 @@ class RegisterForm extends Component {
             </button>
           </form>
         ) : (
-          <button
-            data-cy="register-btn"
-            onClick={() => this.setState({ showRegistrationButton: true })}
-          >
-            Create an account!
-          </button>
-        )}
+            <button
+              data-cy="register-btn"
+              onClick={() => this.setState({ showRegistrationButton: true })}
+            >
+              Create an account!
+            </button>
+          )}
         {this.state.message && (
           <div data-cy="confirmation-message">{this.state.message}</div>
         )}
