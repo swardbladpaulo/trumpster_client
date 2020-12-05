@@ -34,7 +34,7 @@ describe("User can make a search", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
-        url: "http://localhost:3000/api/quotes/",
+        url: "http://localhost:3000/api/quotesq=barack",
         method: "GET",
         response: "fixture:search_for_barack.json",
       });
