@@ -1,23 +1,32 @@
 import React, { Component } from "react";
-import axios from "axios"
+import axios from "axios";
 
 class SearchQuotes extends Component {
   state = {
     searchValue: "",
-    specificQuotes: []
-  }
+    specificQuotes: [],
+  };
 
   setInputValue(event) {
     this.setState({ searchValue: event.target.value });
   }
 
   async searchQuote(event) {
-    const q = this.state.searchValue
-    let response = await axios.get(`/quotesq=${q}`)
-    this.setState({specificQuotes: response.data.quotes})
+    const q = this.state.searchValue;
+    let response = await axios.get(`/quotesq=${q}`);
+    this.setState({ specificQuotes: response.data.quotes });
   }
 
   render() {
+    let displayQuotes = this.state.specificQuotes.map((quotes) => {
+      return (
+        <li key={quotes.id}>
+          {quotes.quote} <br />
+          {quotes.date} <br />
+          {quotes.source} <br />
+        </li>
+      );
+    });
     return (
       <div>
         <input
@@ -32,7 +41,9 @@ class SearchQuotes extends Component {
         >
           Search
         </button>
-        <div data-cy="search_result"></div>
+        <div data-cy="search_results">
+          <ul>{displayQuotes}</ul>
+        </div>
       </div>
     );
   }

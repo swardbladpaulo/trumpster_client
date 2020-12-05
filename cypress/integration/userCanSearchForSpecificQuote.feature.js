@@ -49,9 +49,21 @@ describe("User can make a search", () => {
             "An 'extremely credible source' has called my office and told me that Barack Obama's birth certificate is a fraud."
           )
           .should("exist");
+        cy.get("li").contains("August 2012").should("exist");
         cy.get("li")
           .contains(
-            "Marco Rubio would keep Barack Obama's executive order on amnesty intact. See article. Cannot be President.\n\n  https://t.co/JW5f8OouyA"
+            "https://twitter.com/realdonaldtrump/status/232572505238433794"
+          )
+          .should("exist");
+        cy.get("li")
+          .contains(
+            "Marco Rubio would keep Barack Obama's executive order on amnesty intact. See article. Cannot be President. https://t.co/JW5f8OouyA"
+          )
+          .should("exist");
+        cy.get("li").contains("November 2015").should("exist");
+        cy.get("li")
+          .contains(
+            "https://twitter.com/realDonaldTrump/status/661570281060835328"
           )
           .should("exist");
       });
