@@ -8,7 +8,7 @@ describe("User can make a search", () => {
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/auth",
+      url: "http://localhost:3000/api/auth/sign_in",
       response: "fixture:user_can_login.json",
       headers: {
         uid: "user@gmail.com",
@@ -34,7 +34,7 @@ describe("User can make a search", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
-        url: "http://localhost:3000/api/quotesq=barack",
+        url: "http://localhost:3000/api/quotes",
         method: "GET",
         response: "fixture:search_for_barack.json",
       });

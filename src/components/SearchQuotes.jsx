@@ -12,11 +12,13 @@ class SearchQuotes extends Component {
   }
 
   async searchQuote(event) {
+    event.preventDefault();
+    let headers = JSON.parse(localStorage.getItem("credentials"))
+    debugger
     const q = this.state.searchValue;
-    let response = await axios.get(`/quotesq=${q}`);
+    let response = await axios.get('/quotes', {params: {query: q}}, {headers: headers});
     this.setState({ specificQuotes: response.data.quotes });
   }
-
   render() {
     let displayQuotes = this.state.specificQuotes.map((quotes) => {
       return (
@@ -32,7 +34,7 @@ class SearchQuotes extends Component {
         <input
           type="text"
           data-cy="search_input"
-          placeholder="search for Fraud"
+          placeholder="Search for Fraud"
           onChange={(event) => this.setInputValue(event)}
         />
         <button
