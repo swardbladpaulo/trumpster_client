@@ -4,7 +4,7 @@ import axios from "axios";
 class RegisterForm extends Component {
   state = {
     showRegistrationButton: false,
-    message: "",
+    message: ""
   };
 
   async authenticate(event) {
@@ -60,7 +60,7 @@ class RegisterForm extends Component {
               data-cy="password_confirmation"
               placeholder="Password Confirmation"
             />
-            <button type="submit" value="Register" data-cy="submit-btn">
+            <button type="submit" value="Register" data-cy="submit-register-btn">
               Submit
             </button>
           </form>
