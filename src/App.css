@@ -1,5 +1,6 @@
 #appimage {
-  padding-top: 50px;
+  padding-top: 30px;
+
 }
 
 #quotes {
@@ -7,12 +8,10 @@
   padding-top: 150px;
   margin-left: 500px;
   font-weight: bolder;
-  font-size: large;
+  font-size: x-large;
+  position: absolute;
+  font: Georgia;
 };
-
-#main_container {
-  padding-top: 500px;
-}
 
 #header {
   padding-top: 500px;
