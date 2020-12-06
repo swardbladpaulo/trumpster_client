@@ -7,11 +7,11 @@ import { StripeProvider } from "react-stripe-elements";
 import 'semantic-ui-css/semantic.min.css'
 
 let apiUrl;
-//if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
 	apiUrl = "https://trumpster-dump-api.herokuapp.com/api/";
-//} else {
-//	apiUrl = "http://localhost:3000/api/";
-//}
+} else {
+	apiUrl = "http://localhost:3000/api/";
+}
 axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(
