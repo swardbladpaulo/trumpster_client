@@ -22,6 +22,9 @@ class App extends Component {
     return (
       <div>
         <Header id="header" />
+          <div id="quotes">
+            <QuotesData />
+          </div>
         <div
           className="appimage"
           id="appimage"
@@ -31,6 +34,7 @@ class App extends Component {
             height: "100vh",
           }}
         >
+          
           {this.state.authenticated ? (
             <>
               <Elements>
@@ -40,7 +44,7 @@ class App extends Component {
               <InsultGenerator />
             </>
           ) : (
-            <>
+              <>           
               <div id="registerform">
                 <RegisterForm />
               </div>
@@ -53,9 +57,7 @@ class App extends Component {
                 />
               </div>
                 
-              <div id="quotes">
-                <QuotesData />
-              </div>
+
             </>
           )}
         </div>

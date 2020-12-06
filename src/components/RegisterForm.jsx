@@ -61,7 +61,7 @@ class RegisterForm extends Component {
 							data-cy="password_confirmation"
 							placeholder="Password Confirmation"
 						/>
-						<button
+						<button style={{background: 'red', fontWeight: 'bold', fontSize: 15, color: 'white' }}
 							type="submit"
 							value="Register"
 							data-cy="submit-register-btn"
@@ -70,7 +70,7 @@ class RegisterForm extends Component {
 						</button>
 					</form>
 				) : (
-					<button
+					<button style={{background: 'black', fontWeight: 'bold', fontSize: 18, color: 'white' }}
 						data-cy="register-btn"
 						onClick={() => this.setState({ showRegistrationButton: true })}
 					>

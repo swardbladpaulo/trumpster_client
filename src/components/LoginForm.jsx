@@ -55,15 +55,12 @@ class LoginForm extends Component {
 							data-cy="password"
 							placeholder="Password"
 						/>
-						<button type="submit" value="Register" data-cy="submit-btn">
+						<button style={{background: 'black', fontWeight: 'bold', fontSize: 15, color: 'white' }}type="submit" value="Register" data-cy="submit-btn">
 							Submit
 						</button>
 					</form>
 				) : (
-					<button
-						data-cy="login-btn"
-						onClick={() => this.setState({ showLoginButton: true })}
-					>
+					<button style={{background: 'red', fontWeight: 'bold', fontSize: 18, color: 'white' }}	data-cy="login-btn"	onClick={() => this.setState({ showLoginButton: true })}>
 						Login
 					</button>
 				)}
