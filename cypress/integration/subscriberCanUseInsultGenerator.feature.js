@@ -69,7 +69,7 @@ describe("Subscriber can create an insult with the insult generator", () => {
     cy.get("[data-cy='create-insult']").click()
     cy.get("[data-cy='insult-form']").within(() => {
       cy.get("[data-cy='insult-name']").type("Bob")
-      cy.get("[data-cy='insult-hashtag']").type("TrumpDump")
+      // cy.get("[data-cy='insult-hashtag']").type("TrumpDump")
       cy.get("[data-cy='submit-insult']").click()
     })
     cy.get("[data-cy='insult-result']").should("contain", "bob")
