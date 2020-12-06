@@ -25,24 +25,18 @@ describe("User can make a search", () => {
       cy.get("[data-cy='password']").type("password");
       cy.get("[data-cy='submit-btn']").contains("Submit").click();
     });
-    cy.get("[data-cy='error-message']").contains(
-      "You have successfully logged in!"
-    );
+    cy.get("[data-cy='search_button']").should("be.visible")
+    cy.get("[data-cy='become-subscriber']").should("be.visible")
   });
-
-  describe("successfully", () => {
-    beforeEach(() => {
+    it("is expected to display search results", () => {
       cy.server();
       cy.route({
         method: "GET",
         url: "http://localhost:3000/api/quotes",
         response: "fixture:search_for_barack.json",
       });
-      cy.visit("/");
       cy.get("[data-cy='search_input']").type("barack");
       cy.get("[data-cy='search_button']").click();
-    });
-    it("is expected to display search results", () => {
       cy.get("[data-cy='search_results']").within(() => {
         cy.get("li")
           .contains(
@@ -69,4 +63,5 @@ describe("User can make a search", () => {
       });
     });
   });
-});
+  
+

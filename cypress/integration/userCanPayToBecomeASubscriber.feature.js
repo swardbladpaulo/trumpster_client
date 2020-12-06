@@ -30,9 +30,8 @@ describe("User can become a subscriber", () => {
       cy.get("[data-cy='password']").type("password");
       cy.get("[data-cy='submit-btn']").contains("Submit").click();
     });
-    cy.get("[data-cy='error-message']").contains(
-      "You have successfully logged in!"
-    );
+    cy.get("[data-cy='search_button']").should("be.visible")
+    cy.get("[data-cy='become-subscriber']").should("be.visible")
   });
 
   it("by filling in valid credit card information", () => {

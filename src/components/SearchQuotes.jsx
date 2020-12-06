@@ -5,6 +5,7 @@ class SearchQuotes extends Component {
   state = {
     searchValue: "",
     specificQuotes: [],
+    
   };
 
   setInputValue(event) {

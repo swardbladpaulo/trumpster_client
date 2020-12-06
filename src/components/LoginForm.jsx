@@ -24,9 +24,10 @@ class LoginForm extends Component {
       };
       localStorage.setItem("credentials", JSON.stringify(userData));
       localStorage.setItem("authenticated", true);
+      this.props.toggleAuthenticatedState()
+      debugger
       this.setState({
         showLoginButton: false,
-        message: "You have successfully logged in!",
       });
     } catch (error) {
       localStorage.setItem("authenticated", false);

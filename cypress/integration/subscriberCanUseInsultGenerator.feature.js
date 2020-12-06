@@ -30,9 +30,8 @@ describe("Subscriber can create an insult with the insult generator", () => {
       cy.get("[data-cy='password']").type("password");
       cy.get("[data-cy='submit-btn']").contains("Submit").click();
     });
-    cy.get("[data-cy='error-message']").contains(
-      "You have successfully logged in!"
-    );
+    cy.get("[data-cy='search_button']").should("be.visible")
+    cy.get("[data-cy='become-subscriber']").should("be.visible")
     cy.get("[data-cy='become-subscriber']").click();
     cy.get('[data-cy="payment-form"]').within(() => {
       cy.get('[data-cy="card-number"]').within(() => {
