@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 
 const insults = [
-  "${name}, didn’t have the mental capacity needed. You was dumb as a rock and I couldn’t get rid of you fast enough. You were lazy as hell",
-  "${name} went in and didn’t know the air conditioning didn’t work. You sweated like dogs… How are you gonna beat ISIS? I don’t think it’s gonna happen.",
-]
+  "${name}, didn’t have the mental capacity needed. You were dumb as a rock and I couldn’t get rid of you fast enough. You were lazy as hell",
+  "${name} went in and didn’t know the air conditioning didn’t work. You sweated like a dog… How are you gonna beat ISIS? I don’t think it’s gonna happen.",
+  "If I were running ‘The View’, I’d fire ${name}. I mean, I’d look at you right in that fat, ugly face of yours, I’d say '${name}, you’re fired.'",
+  "",
+];
 class InsultGenerator extends Component {
   state = {
     showInsultButton: false,
+    insultResult: insults[3],
   };
+
+  randomizeInsult = () => {
+    this.setState({ insultResult: insults[Math.floor(Math.random() * 3)] });
+  };
+
+  setInsult = (insults) => {
+    this.setState ({insultResult: insults})
+  }
+
   render() {
     return (
       <>
@@ -25,7 +37,12 @@ class InsultGenerator extends Component {
               data-cy="insult-hashtag"
               placeholder="Add a Hashtag"
             />
-            <button type="submit" value="submit" data-cy="submit-insult">
+            <button
+              type="submit"
+              value="submit"
+              data-cy="submit-insult"
+              onClick={this.randomizeInsult}
+            >
               Submit
             </button>
           </form>
@@ -38,7 +55,7 @@ class InsultGenerator extends Component {
           </button>
         )}
         <div>
-          <div data-cy="insult-result">this is an insult</div>
+          <div data-cy="insult-result">{insultResult}</div>
         </div>
       </>
     );
