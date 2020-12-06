@@ -17,10 +17,11 @@ class RegisterForm extends Component {
     try {
       let response = await axios.post("/auth", credentials);
       let userData = {
-        uid: response.headers.uid,
-        client: response.headers.client,
-        token_type: response.headers.token_type,
-        expiry: response.headers.expiry,
+        uid: response.headers["uid"],
+        client: response.headers["client"],
+        access_token: response.headers["access-token"],
+        token_type: "Bearer",
+        expiry: response.headers["expiry"],
       };
       localStorage.setItem("credentials", JSON.stringify(userData));
       localStorage.setItem("authenticated", true);
