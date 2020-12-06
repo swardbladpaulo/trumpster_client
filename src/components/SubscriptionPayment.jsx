@@ -20,8 +20,8 @@ class SubscriptionPayment extends Component {
 
 	}
 	performPayment = async (stripeToken) => {
-		let headers = JSON.parse(localStorage.getItem("userData"));
-		let response = await axios.post("/subscriptions", { stripeToken: stripeToken }, { headers: headers })
+		let headers = JSON.parse(localStorage.getItem("credentials"));
+		let response = await axios.post("/subscriptions", { stripeToken: stripeToken }, { headers: headers } )
 		response.data.paid
 			? this.setState({ message: response.data.message })
 			: this.setState({ message: "Your payment information is RIGGED!!" });
