@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+const insults = [
+  "${name}, didn’t have the mental capacity needed. You was dumb as a rock and I couldn’t get rid of you fast enough. You were lazy as hell",
+  "${name} went in and didn’t know the air conditioning didn’t work. You sweated like dogs… How are you gonna beat ISIS? I don’t think it’s gonna happen.",
+]
 class InsultGenerator extends Component {
   state = {
     showInsultButton: false,
