@@ -21,7 +21,6 @@ class SubscriptionPayment extends Component {
 	}
 	performPayment = async (stripeToken) => {
 		let headers = JSON.parse(localStorage.getItem("credentials"));
-		debugger
 		let response = await axios.post("/subscriptions", { stripeToken: stripeToken }, { headers: headers } )
 		response.data.paid
 			? this.setState({ message: response.data.message })
