@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 import { StripeProvider } from "react-stripe-elements";
+import 'semantic-ui-css/semantic.min.css'
 
 let apiUrl;
 if (process.env.NODE_ENV === "production") {
