@@ -10,36 +10,35 @@ import Header from "./components/Header";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    authenticated: false,
-  };
+	state = {
+		authenticated: false,
+	};
+
+  toggleAuthenticatedState() {
+    this.setState({ authenticated: !this.state.authenticated})
+  }
 
   render() {
     return (
       <div>
-          <Header id="header"/>
-         <div className="appimage" id="appimage" style={{background: 'url("../images/rsz_1image.png")', backgroundSize: 'cover', height: '100vh',}}>
+        <h1>Trumpster</h1>
         {this.state.authenticated ? (
           <>
             <Elements>
               <SubscriptionPayment />
             </Elements>
             <SearchQuotes />
-            {/* <InsultGenerator /> */}
-          </>
+            <InsultGenerator />
+            </>
         ) : (
-          <>
+            <>
             <RegisterForm />
-                <LoginForm />
-                <div id="quotes">
-                  <QuotesData  />
-                </div>
-          </>
-        )}
+            <LoginForm toggleAuthenticatedState={() => this.toggleAuthenticatedState()}/>
+            <QuotesData />
+          </> )
+    }
       </div>
-      </div>
-    );
-  }
+    )}
 }
 
 export default App;
