@@ -10,13 +10,6 @@ function Header() {
           <li className="nav-item">
             <div className="nav-links">Trumpster!</div>
           </li>
-          <li className="nav-item">
-            <div className="nav-links">Login</div>
-          </li>
-          <li className="nav-item">
-            <div className="nav-links">Create an account</div>
-          </li>
-
         </ul>
       </div>
     </nav>
