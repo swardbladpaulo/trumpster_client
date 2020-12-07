@@ -8,7 +8,7 @@ function Header() {
         <ul className="nav-menu">
 
           <li className="nav-item">
-            <div className="nav-links">Trumpster!</div>
+            <div className="nav-links">Trumpster - The Greatest</div>
           </li>
         </ul>
       </div>

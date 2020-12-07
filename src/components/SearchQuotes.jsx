@@ -45,7 +45,7 @@ class SearchQuotes extends Component {
 					Search
 				</button>
 				<div data-cy="search_results">
-					<ul>{displayQuotes}</ul>
+					<ul id="search_qoutes">{displayQuotes}</ul>
 				</div>
 			</div>
 		);
