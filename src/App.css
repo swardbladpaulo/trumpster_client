@@ -5,6 +5,8 @@
   max-width: 2000px;
   width: 2000px;
   height: 800px;
+  justify-content: center;
+  align-items: center;
 }
 
 #quotes {
@@ -29,18 +31,4 @@
 #registrationform {
   padding-left: 660px;
   padding-top: 220px;
-  margin-left: 0px;
-  font-weight: bolder;
-  font-size: x-large;
-  font: Georgia;
-};
-
-#header {
-  padding-top: 500px;
 }
-.nav-links{
-  font-size: xx-large;
-  font-weight: bolder;
-}
-
-
