@@ -22,19 +22,18 @@ class App extends Component {
     return (
       <div>
         <Header id="header" />
-          <div id="quotes">
-            <QuotesData />
-          </div>
+        <div id="quotes">
+          <QuotesData />
+        </div>
         <div
           className="appimage"
           id="appimage"
           style={{
             background: 'url("../images/image2.jpg")',
             backgroundSize: "cover",
-            height: "100vh",
+            height: "110vh",
           }}
         >
-          
           {this.state.authenticated ? (
             <>
               <Elements>
@@ -44,11 +43,11 @@ class App extends Component {
               <InsultGenerator />
             </>
           ) : (
-              <>           
+            <>
               <div id="registerform">
                 <RegisterForm />
               </div>
-                
+
               <div id="login">
                 <LoginForm
                   toggleAuthenticatedState={() =>
@@ -56,8 +55,6 @@ class App extends Component {
                   }
                 />
               </div>
-                
-
             </>
           )}
         </div>
