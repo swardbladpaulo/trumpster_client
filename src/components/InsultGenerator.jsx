@@ -21,7 +21,7 @@ class InsultGenerator extends Component {
 			`${this.state.name} is an extremely unattractive woman, I refuse to say that because I always insist on being politically correct.`,
 			`I am watching Crooked ${this.state.name} speak. Same old stuff, our country needs change!`,
 		];
-		const result = insults[Math.floor(Math.random() * 3)];
+		const result = insults[Math.floor(Math.random() * 6)];
 		this.setState({ insultResult: result });
 	};
 

@@ -8,7 +8,7 @@ function Header() {
         <ul className="nav-menu">
 
           <li className="nav-item">
-            <div className="nav-links">TRUMPSTER - The Greatest Quotes from a Tremendius fake President </div>
+            <div className="nav-links">TRUMPSTER</div>
           </li>
         </ul>
       </div>
